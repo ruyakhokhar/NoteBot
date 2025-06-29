@@ -1,0 +1,2 @@
+# NoteBot
+Smart Notes application
