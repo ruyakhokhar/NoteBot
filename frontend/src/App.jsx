@@ -16,6 +16,9 @@ function App() {
 
   return (
     <div className="min-h-screen bg-gray-100 p-6">
+      <h1 className="text-3xl md:text-4xl font-extrabold text-indigo-600 tracking-tight drop-shadow-sm mb-6">
+        Note<span className="text-gray-800">Bot</span>
+      </h1>
       <NoteEditor onSave={handleAddNote} />
       <NoteList notes={notes} onDelete={handleDeleteNote} />
     </div>
