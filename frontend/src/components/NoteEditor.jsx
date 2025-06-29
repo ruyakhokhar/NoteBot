@@ -7,42 +7,48 @@ export default function NoteEditor({ onSave }) {
 
   const handleSave = () => {
     if (!text.trim()) return;
-    onSave({ text, summary });
+
+    // const newNote = {
+    //   id: crypto.randomUUID(),
+    //   content: text,
+    //   AISummary: summary,
+    // }
+
+    onSave({ id: crypto.randomUUID(), text, summary });
     setText('');
     setSummary('');
+
+    console.log("✍️ Saving note:", text);
   };
 
-  async function getAISummary(text) {
-    const response = await fetch('https://api.openai.com/v1/chat/completions', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        Authorization: `Bearer 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`,
-      },
-      body: JSON.stringify({
-        model: 'gpt-4o-mini', // or your chosen model
-        messages: [
-          { role: 'system', content: 'You are a helpful assistant.' },
-          { role: 'user', content: `Summarize this note:\n\n${text}` },
-        ],
-        max_tokens: 100,
-      }),
-    });
-  
-    const data = await response.json();
-    return data.choices[0].message.content;
-  }
+  const handleGrammarCheck = async () => {
+    if (!text.trim()) return;
 
-  const handleSummarize = async () => {
-    const res = await fetch('http://localhost:5000/api/summarize', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ text }),
-    });
-  
-    const data = await res.json();
-    setSummary(data.summary);
+    try {
+      setLoading(true);
+      setSummary('');
+
+      await new Promise((r) => setTimeout(r, 1000)); // 1s delay
+
+      const res = await fetch('http://localhost:5000/api/grammarcheck', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ text }),
+      });
+
+      const data = await res.json();
+
+      if (!res.ok) throw new Error(data.error || 'Grammar check failed.');
+
+      setSummary(data.summary);
+    } catch (error) {
+      console.error('Error:', error.message);
+      setSummary(`${error.message}`);
+    } finally {
+      setLoading(false);
+    }
   };
+
 
   return (
     <div className="mx-6 mt-10 bg-white p-8 rounded-3xl shadow-xl border border-gray-200">
@@ -56,20 +62,19 @@ export default function NoteEditor({ onSave }) {
         className="w-full p-4 text-base leading-relaxed border border-gray-300 rounded-2xl bg-gradient-to-br from-white to-gray-50 shadow-inner focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-200 placeholder:text-gray-400 placeholder:italic"
       />
 
-      {summary && (
+      {summary &&
         <div className="mt-5 p-4 bg-blue-50 border border-blue-200 rounded-xl text-blue-800 text-sm">
-          <strong className="block mb-1">AI Summary:</strong>
+          <strong className="block mb-1">Note with correct grammar:</strong>
           <p>{summary}</p>
-        </div>
-      )}
+        </div>}
 
       <div className="flex flex-wrap gap-3 mt-6">
         <button
-          onClick={handleSummarize}
+          onClick={handleGrammarCheck}
           disabled={loading}
           className="bg-purple-600 hover:bg-purple-700 text-white font-medium px-5 py-2 rounded-xl shadow transition disabled:opacity-50"
         >
-          {loading ? 'Summarizing...' : 'Summarize with AI'}
+          {loading ? 'Checking...' : 'Grammar Check with AI'}
         </button>
 
         <button
