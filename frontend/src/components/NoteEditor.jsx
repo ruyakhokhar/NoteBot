@@ -52,18 +52,18 @@ export default function NoteEditor({ onSave }) {
 
   return (
     <div className="mx-6 mt-10 bg-white p-8 rounded-3xl shadow-xl border border-gray-200">
-      <h2 className="text-2xl font-bold mb-4 text-gray-800">Create a New Note</h2>
+      <h2 className="text-2xl font-bold mb-4 text-[#00263e]">Create a New Note</h2>
 
       <input
         type="text"
         value={text}
         onChange={(e) => setText(e.target.value)}
         placeholder="Start writing your brilliant note here..."
-        className="w-full p-4 text-base leading-relaxed border border-gray-300 rounded-2xl bg-gradient-to-br from-white to-gray-50 shadow-inner focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-200 placeholder:text-gray-400 placeholder:italic"
+        className="w-full p-4 text-base leading-relaxed border border-gray-300 rounded-2xl bg-gradient-to-br from-white to-gray-50 shadow-inner focus:outline-none focus:ring-1 focus:border-[#00263e] transition-all duration-200 placeholder:text-gray-400 placeholder:italic"
       />
 
       {summary &&
-        <div className="mt-5 p-4 bg-blue-50 border border-blue-200 rounded-xl text-blue-800 text-sm">
+        <div className="mt-5 p-4 bg-blue-50 border border-blue-200 rounded-xl text-[#00263e] text-sm">
           <strong className="block mb-1">Note with correct grammar:</strong>
           <p>{summary}</p>
         </div>}
@@ -72,14 +72,14 @@ export default function NoteEditor({ onSave }) {
         <button
           onClick={handleGrammarCheck}
           disabled={loading}
-          className="bg-purple-600 hover:bg-purple-700 text-white font-medium px-5 py-2 rounded-xl shadow transition disabled:opacity-50"
+          className="bg-[#00263e] hover:bg-[#01446d] text-white font-medium px-5 py-2 rounded-xl shadow transition disabled:opacity-50"
         >
           {loading ? 'Checking...' : 'Grammar Check with AI'}
         </button>
 
         <button
           onClick={handleSave}
-          className="bg-blue-600 hover:bg-blue-700 text-white font-medium px-5 py-2 rounded-xl shadow transition"
+          className="bg-[#00263e] hover:bg-[#01446d] text-white font-medium px-5 py-2 rounded-xl shadow transition"
         >
           Save Note
         </button>

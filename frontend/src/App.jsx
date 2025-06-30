@@ -2,6 +2,7 @@ import { useState } from 'react'
 import './App.css'
 import NoteList from './components/NoteList'
 import NoteEditor from './components/NoteEditor'
+import NoteBotLogo from './assets/NoteBot.png';
 
 function App() {
   const [notes, setNotes] = useState([]);
@@ -16,9 +17,10 @@ function App() {
 
   return (
     <div className="min-h-screen bg-gray-100 p-6">
-      <h1 className="text-3xl md:text-4xl font-extrabold text-indigo-600 tracking-tight drop-shadow-sm mb-6">
-        Note<span className="text-gray-800">Bot</span>
-      </h1>
+      <div className="flex justify-center">
+  <img src={NoteBotLogo} alt="NoteBot Logo" className="md:h-13 md:w-60 rounded object-cover" />
+</div>
+
       <NoteEditor onSave={handleAddNote} />
       <NoteList notes={notes} onDelete={handleDeleteNote} />
     </div>
