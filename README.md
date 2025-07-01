@@ -1,6 +1,6 @@
 # NoteBot — Your AI Grammar Assistant
 
-NoteBot is an AI-powered note-taking app that helps you write, summarize, and polish your thoughts with ease. Built using **React** on the front end and **Express.js** on the backend, NoteBot integrates with **OpenAI's GPT API** (via OpenRouter) to generate grammar-corrected summaries of your notes in real time.
+NoteBot is an AI-powered note-taking app that helps you write, summarize, and polish your thoughts with ease. Built using **React** on the front end and **Express.js** on the backend, NoteBot integrates with **Google's AI Studio API** (via OpenRouter) to generate grammar-corrected summaries of your notes in real-time.
 
 ---
 
