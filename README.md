@@ -15,10 +15,10 @@ NoteBot is an AI-powered note-taking app that helps you write, summarize, and po
 
 ## 🛠️ Tech Stack
 
-| Frontend      | Backend        | AI Integration   |
-| ------------- | -------------- | ---------------- |
-| React + Vite  | Node + Express | OpenRouter (GPT) |
-| Tailwind CSS  | Body-parser    | dotenv           |
+| Frontend      | Backend        | AI Integration |
+| ------------- | -------------- | -------------- |
+| React + Vite  | Node + Express | OpenRouter     |
+| Tailwind CSS  | Body-parser    | dotenv         |
 
 ---
 
