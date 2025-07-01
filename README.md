@@ -22,7 +22,7 @@ NoteBot is an AI-powered note-taking app that helps you write, summarize, and po
 
 ---
 
-## 📸 Screenshots
+## 📸 Logo
 
 ![NoteBot Logo](./frontend/src/assets/NoteBot.png)
 
