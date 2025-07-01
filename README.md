@@ -35,10 +35,9 @@ NoteBot is an AI-powered note-taking app that helps you write, summarize, and po
 ```bash
 git clone https://github.com/ruyakhokhar/NoteBot.git
 cd NoteBot
-2. Install Dependencies
-bash
-Copy
-Edit
+
+### 2. Install Dependencies
+
 # Frontend
 cd frontend
 npm install
@@ -46,17 +45,13 @@ npm install
 # Backend
 cd ../backend
 npm install
-3. Configure your API Key
-Create an .env file inside the backend folder:
 
-env
-Copy
-Edit
+### 3. Configure your API Key
+Create an .env file inside the backend folder:
 OPENROUTER_API_KEY=your_openrouter_api_key_here
-4. Start the App
-bash
-Copy
-Edit
+
+### 4. Start the App
+
 # Terminal 1: Backend
 cd backend
 node index.js
@@ -64,6 +59,7 @@ node index.js
 # Terminal 2: Frontend
 cd frontend
 npm run dev
+
 Visit: http://localhost:5173/
 
 💻 Example Workflow
