@@ -89,6 +89,45 @@ Do NOT commit your API keys to GitHub.
 
 Add ```bash.env``` to ```bash.gitignore```.
 
+## 💻 Run as Desktop App (Windows)
+
+NoteBot is also available as a downloadable `.exe` desktop application for Windows.
+
+### 📦 Download
+
+👉 [Download NoteBot for Windows](https://your-download-link.com/NoteBot.exe)  
+*(Upload your `.exe` file to GitHub Releases, Google Drive, or any file host and paste the link above.)*
+
+### 🚀 How to Use
+
+1. Download the `NoteBot.exe` file.
+2. Double-click to open the app — no installation required.
+3. Start writing and check your grammar instantly!
+
+### ⚠️ Note: This desktop version runs **without backend AI features** (grammar correction will be disabled).  
+### To use AI grammar checking, use the local development setup (see below).
+
+Setup backend server locally:
+
+# Backend
+```bash
+cd ../backend
+npm install
+```
+
+### 3. Configure your API Key
+
+Create an .env file inside the backend folder:
+```bash
+OPENROUTER_API_KEY=your_openrouter_api_key_here
+```
+
+# Terminal: Backend
+```bash
+cd backend
+node index.js
+```
+
 ### AI Models Used
 
 *google/gemini-2.5-flash*

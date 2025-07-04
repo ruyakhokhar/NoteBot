@@ -1,0 +1,27 @@
+{
+  "name": "notebot",
+  "version": "1.0.0",
+  "main": "main.js",
+  "type": "module",
+  "description": "Write right with NoteBot.",
+  "author": "Ruya Khokhar <ruyakhokhar@gmail.com>",
+  "build": {
+    "appId": "com.notebot.app",
+    "productName": "NoteBot",
+    "win": {
+      "target": "nsis",
+      "icon": "public/favicon.ico"
+    },
+    "directories": {
+      "buildResources": "assets"
+    }
+  },
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder"
+  },
+  "devDependencies": {
+    "electron": "^37.1.0",
+    "electron-builder": "^26.0.12"
+  }
+}
