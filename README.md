@@ -95,12 +95,11 @@ NoteBot is also available as a downloadable `.exe` desktop application for Windo
 
 ### 📦 Download
 
-👉 [Download NoteBot for Windows](https://your-download-link.com/NoteBot.exe)  
-*(Upload your `.exe` file to GitHub Releases, Google Drive, or any file host and paste the link above.)*
+👉 [Download NoteBot for Windows](https://github.com/ruyakhokhar/NoteBot/releases/download/1.0.0/NoteBot.Setup.1.0.0.exe)  
 
 ### 🚀 How to Use
 
-1. Download the `NoteBot.exe` file.
+1. Download the `NoteBot.Setup.1.0.0.exe` file.
 2. Double-click to open the app — no installation required.
 3. Start writing and check your grammar instantly!
 
