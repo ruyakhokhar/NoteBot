@@ -17,7 +17,7 @@ app.post('/api/grammarcheck', async (req, res) => {
       {
         model: 'google/gemini-2.5-flash', // or another model from OpenRouter's list
         messages: [
-          { role: 'system', content: 'Check the grammar of the text provided and only provide the text with correct grammar:' },
+          { role: 'system', content: 'Check the grammar of the text provided and only provide the text with correct grammar and capitalised first letter of sentence:' },
           { role: 'user', content: text },
         ],
         max_tokens: 100,

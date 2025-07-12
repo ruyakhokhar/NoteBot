@@ -30,7 +30,7 @@ export default function NoteEditor({ onSave }) {
 
       await new Promise((r) => setTimeout(r, 1000)); // 1s delay
 
-      const res = await fetch('http://localhost:5000/api/grammarcheck', {
+      const res = await fetch('https://notebot-b9nj.onrender.com/api/grammarcheck', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ text }),
