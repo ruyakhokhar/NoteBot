@@ -95,7 +95,7 @@ NoteBot is also available as a downloadable `.exe` desktop application for Windo
 
 ### 📦 Download
 
-👉 [Download NoteBot for Windows](https://github.com/ruyakhokhar/NoteBot/releases/download/1.0.0/NoteBot.Setup.1.0.0.exe)  
+👉 [Download NoteBot for Windows](https://github.com/ruyakhokhar/NoteBot/raw/main/NoteBot%20Setup%201.0.0.exe)  
 
 ### 🚀 How to Use
 
